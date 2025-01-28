@@ -7,7 +7,7 @@ const cors= require("cors")
 const allowedOrigins=['http://localhost:5173']
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({origin:allowedOrigins, credentials:true}))
+app.use(cors({origin:allowedOrigins,   methods: ['GET', 'POST', 'PUT', 'DELETE'], credentials:true}))
 app.use('/api/auth',authroute)
 app.use('/api/user',userRoute)
 
